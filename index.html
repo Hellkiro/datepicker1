@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>datepicker</title>
+	<link href="css/style.less" rel="stylesheet/less"/>
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/less.min.js"></script>
+</head>
+<body>
+
+<script>
+jQuery(document).ready(function() {
+	datepicker({
+		year: 2019, //по умолчанию 2019
+		monthsOff: [0,1,9,10,11], //нерабочие месяцы нумерация с нуля
+		daysOff: [3,4], //нерабочие дни недели нумерация с нуля
+		month: 2, //текущий месяц при загрузке страницы, по умолчанию первый не входящий в массив исключений
+		dateElem: 'date-elem', //класс элемента куда следует засунуть текст даты
+		datesOff: [ //занятые дни
+			[],
+			[],
+			[2,3,4,5,6],
+			[27,28,29,30],
+			[1]
+		]
+	});
+});
+</script>
+<div class="new-datepicker">
+	<div class="months"></div>
+	<div class="dates">
+		<div class="dates-top">
+			<div class="current-date date-elem">Март 2019</div>
+			<div class="days">
+				<div class="item">пн</div>
+				<div class="item">вт</div>
+				<div class="item">ср</div>
+				<div class="item">чт</div>
+				<div class="item">пт</div>
+				<div class="item">сб</div>
+				<div class="item">вс</div>
+			</div>
+		</div>
+		<div class="dates-bottom-con"></div>
+	</div>
+</div>
+
+<div class="curDate date-elem">22 - 26 марта 2019 г.</div>
+<input type="text" class="input-date">
+<script type="text/javascript" src="js/datepicker.js"></script>		
+</body>
+</html>
